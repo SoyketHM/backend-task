@@ -6,12 +6,12 @@ mongoose.Promise 	= global.Promise;
 const stringstoreSchema = new Schema({
 	strA: {
 		type: String,
-		required: 'Please enter a string',
+		// required: 'Please enter a string',
 		trim: true
 	},
 	strB: {
 		type: String,
-		required: 'Please enter a string',
+		// required: 'Please enter a string',
 		trim: true
 	}
 }, { timestamps: true });
