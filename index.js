@@ -1,8 +1,9 @@
 const express = require('express');
-const routes = require('./routes');
 const app = express();
+require('dotenv').config();
+const db = require('./db/db');
+const routes = require('./routes');
 const errorHandler = require('./middlewares/errorHandlers');
-// const db = require('./db/db');
 
 // Load Middlewares
 app.use(express.json());

@@ -1,18 +1,19 @@
+const Stringstore   	= require('../models/stringstore');
+
 exports.addString = async (req, res) => {
-	// console.log(req.headers["content-type"]);
-	const data = req.body;
+	const data = await Stringstore.create(req.body);
 
 	if (!data) {
 		res.status(404).json({
 			success: false,
-			message: "Service creation failed"
+			message: "String store failed"
 		});
 		return;
 	}
 
 	res.status(200).json({
 		'content-type': req.headers["content-type"],
-		message: "Service created successfully",
+		message: "String store successfully",
 		data,
 	});
 };

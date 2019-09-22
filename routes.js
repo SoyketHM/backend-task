@@ -1,4 +1,4 @@
-const funController        = require('./controllers/funController');
+const funController    = require('./controllers/funController');
 const router           = require('express').Router();
 const { catchErrors }  = require('./middlewares/errorHandlers');
 
