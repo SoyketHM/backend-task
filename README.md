@@ -8,6 +8,9 @@
 # install dependencies
 npm install
 
+# create .env using env.example file
+touch .env
+
 # serve with hot reload at localhost:3000
 # using nodemon
 npm start 
@@ -19,4 +22,4 @@ http://localhost:3000/add (add strings)
 http://localhost:3000/list (get all saved pairs of string)
 
 # fun function (funController.fun)
-#fun function return true if strA === strB, return false if strA !== strB
+fun function return true if strA === strB, return false if strA !== strB
