@@ -1,5 +1,6 @@
 const Stringstore   	= require('../models/stringstore');
 
+// save strings
 exports.addStrings = async (req, res) => {
 	let data;
 	// split strA & strB
@@ -31,22 +32,25 @@ exports.addStrings = async (req, res) => {
 // fun function for compare between strA & strB
 function fun(stra, strb) {
 		// console.log(stra, strb)
+    // let i = 0;
 	if (strb.length <= 0){
 		stra = '';
 		strb = '';
-		console.log(stra, strb);
+		// console.log(stra, strb);
 	}else {
-		const strlen = stra.length;
-		for (let i = 0;i<strlen; i++) {
-			if (strb[i] !== stra[i]) {
+		for (let i=0;i<stra.length; i++) {
+		    console.log(strb.includes( stra[i]));
+			if (!strb.includes( stra[i]) ) {
 				stra.splice(i,1);
+                i--;
 			}
 		}
 		console.log(stra, strb);
 		stra = stra.join('');
 		strb = strb.join('');
 	}
-	
+
+    console.log(stra, strb);
 	// compare stra & strb
 	if (stra === strb) {
 		return true;
@@ -54,6 +58,7 @@ function fun(stra, strb) {
 	return false;
 }
 
+// get all pairs of strings
 exports.getStrings = async (req, res) => {
 
 	// get all pairs of saved strings
@@ -61,4 +66,4 @@ exports.getStrings = async (req, res) => {
 
 	// send response
 	res.status(200).json({ list	});
-}
+};
